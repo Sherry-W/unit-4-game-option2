@@ -34,4 +34,4 @@ Characters from the japanese animation "One Piece."
 
 Please Enjoy the Game!
 
-![Game Page](/assets/images/RPG_Game.JPG)
+![Game Page](/assets/images/)
