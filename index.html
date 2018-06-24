@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="copyright" picture="https://fafa-nts.deviantart.com,  https://www.wallpapervortex.com/wallpaper-56522_one_piece.html#.Wy2Sa1VKi70, http://dreamlogos.wikia.com/wiki/File:One_piece_logo-5.png">  
+
+	<title>RPG Game</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+</head>
+<body>
+	
+<div id="container">
+<!-- characters for user to pick -->
+	<div>
+		<div id="chopper" data-name="Chopper" data-hp="180" data-attpower="50" data-oldattpower="50" data-coutpower="50" class="chooseChar">
+			<h3>Chopper</h3>	
+			<img src="assets/images/tony_tony_chopper.png" alt="chopper">
+			<p>HP: <span id="one_hp"></span></p>
+		</div>
+
+		<div id="luffy" data-name="Luffy" data-hp="150" data-attpower="8" data-oldattpower="8" data-coutpower="25" class="chooseChar">
+			<h3>Luffy</h3>	
+			<img src="assets/images/luffy_d_monkey.png" alt="luffy">
+			<p>HP: <span id="two_hp"></span></p>
+		</div>
+
+		<div id="law" data-name="Law" data-hp="180" data-attpower="6" data-oldattpower="6" data-coutpower="30" class="chooseChar">
+			<h3>Law</h3>	
+			<img src="assets/images/trafalgar_law.png" alt="law">
+			<p>HP: <span id="three_hp"></span></p>
+		</div>
+
+		<div id="shanks" data-name="Shanks" data-hp="200" data-attpower="4" data-oldattpower="4" data-coutpower="35" class="chooseChar">
+			<h3>Shanks</h3>	
+			<img src="assets/images/shanks.png" alt="shanks">
+			<p>HP: <span id="four_hp"></span></p>
+		</div>
+
+	</div>
+
+	<h2>Your Character</h2>
+
+<!-- character user picked -->
+	<div id="yourChar"></div>
+
+	<h2>Enemies Available To Attack</h2>
+
+<!-- Enemies to choose from -->
+	<div id="enemAvail"></div>
+
+	<h2>Fight Section</h2>
+	<button id="attack">Attack</button>
+
+	<h2>Defender</h2>
+
+<!-- character user picked -->
+	<div id="defender"></div>
+
+	<p id="userAttack"></p>
+	<p id="defenderAttack"></p>
+	<h3 id="msg"></h3>
+
+	<button id="restart">Restart</button>
+
+</div>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/javascript/game.js"></script>
+
+</body>
+</html>
