@@ -9,53 +9,68 @@ body {
 
 h2 {
     display: block;
-    font-size: 1.5em;
+    font-size: 35px;
     margin-top: 0.83em;
     margin-bottom: 0.83em;
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
+    color: #FFFF46;
 }
 
 h3 { 
     display: block;
-    font-size: 1.17em;
+    font-size: 30px;
     margin-top: 1em;
     margin-bottom: 1em;
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
+    color: white;
 }
 
-h3 { 
+p {
     display: block;
-    font-size: 1.17em;
+    font-size: 25px;
     margin-top: 1em;
     margin-bottom: 1em;
     margin-left: 0;
     margin-right: 0;
-    font-weight: bold;
+    color: #FFBEF9;
+}
+
+p span {
+	color: red;
 }
 
 img {
 	width: 200px;
 }
 
+#container {
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 1200px;
+}
+
 .chooseChar, .enem, .def {
 	float: left;
 	width: 200px;
-	border: 5px solid green;
+	border: 10px solid #44EB30;
 	text-align: center;
 	margin: 5px;
 	cursor: pointer;
 }
 
+#msg {
+	color: #FFC300;
+}
 .enem {
-	border: 5px solid red;
+	border-color: red;
 }
 
 .def {
-	border: 5px solid black;
+	border-color: black;
 }
 
 h2, h3, p {
@@ -63,10 +78,38 @@ h2, h3, p {
 	padding: 0;
 }
 
-h2, h3, #userAttack {
+#restart {
+	display: none;
+}
+
+.charLoc {
+	clear: both;
+	float: left;
+	margin-right: 50px;
+}
+
+.fightLoc {
+	width: 400px;
+	float: left;
+	margin-top: 20px;
+}
+
+.defLoc,
+.enemLoc {
+	display: none;
+}
+
+.msgLoc {
+	width: 300px;
+	margin-top: 20px;
+}
+
+.enemLoc, 
+.defLoc,
+.removeFloat {
 	clear: both;
 }
 
-#restart {
-	display: none;
+.enemLoc {
+	padding-top: 50px;
 }

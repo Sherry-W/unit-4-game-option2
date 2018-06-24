@@ -12,27 +12,28 @@
 <body>
 	
 <div id="container">
+
 <!-- characters for user to pick -->
 	<div>
-		<div id="chopper" data-name="Chopper" data-hp="180" data-attpower="50" data-oldattpower="50" data-coutpower="50" class="chooseChar">
+		<div id="chopper" data-name="Chopper" data-hp="100" data-attpower="18" data-oldattpower="18" data-coutpower="20" class="chooseChar">
 			<h3>Chopper</h3>	
 			<img src="assets/images/tony_tony_chopper.png" alt="chopper">
 			<p>HP: <span id="one_hp"></span></p>
 		</div>
 
-		<div id="luffy" data-name="Luffy" data-hp="150" data-attpower="8" data-oldattpower="8" data-coutpower="25" class="chooseChar">
+		<div id="luffy" data-name="Luffy" data-hp="120" data-attpower="12" data-oldattpower="12" data-coutpower="18" class="chooseChar">
 			<h3>Luffy</h3>	
 			<img src="assets/images/luffy_d_monkey.png" alt="luffy">
 			<p>HP: <span id="two_hp"></span></p>
 		</div>
 
-		<div id="law" data-name="Law" data-hp="180" data-attpower="6" data-oldattpower="6" data-coutpower="30" class="chooseChar">
+		<div id="law" data-name="Law" data-hp="160" data-attpower="9" data-oldattpower="9" data-coutpower="15" class="chooseChar">
 			<h3>Law</h3>	
 			<img src="assets/images/trafalgar_law.png" alt="law">
 			<p>HP: <span id="three_hp"></span></p>
 		</div>
 
-		<div id="shanks" data-name="Shanks" data-hp="200" data-attpower="4" data-oldattpower="4" data-coutpower="35" class="chooseChar">
+		<div id="shanks" data-name="Shanks" data-hp="180" data-attpower="8" data-oldattpower="8" data-coutpower="10" class="chooseChar">
 			<h3>Shanks</h3>	
 			<img src="assets/images/shanks.png" alt="shanks">
 			<p>HP: <span id="four_hp"></span></p>
@@ -40,35 +41,40 @@
 
 	</div>
 
-	<h2>Your Character</h2>
-
 <!-- character user picked -->
+  <div class="charLoc">
+	<h2>Your Character</h2>
 	<div id="yourChar"></div>
+  </div>
 
-	<h2>Enemies Available To Attack</h2>
-
-<!-- Enemies to choose from -->
-	<div id="enemAvail"></div>
-
+<!-- Fight Section -->
+  <div id="fightLoc_before" class="removeFloat">
 	<h2>Fight Section</h2>
 	<button id="attack">Attack</button>
+  	<button id="restart">Restart</button>
 
-	<h2>Defender</h2>
+<!-- msg area -->
+	 <div id="msgLoc_before">
+	  <p id="userAttack"></p>
+	  <br>
+	  <p id="defenderAttack"></p>
+	  <h3 id="msg"></h3> 
+	 </div>
+  </div>
 
-<!-- character user picked -->
+<!-- Defender user picked -->
+  <div class="defLoc">
+  	<h2>Defender</h2>
 	<div id="defender"></div>
+  </div>
 
-	<p id="userAttack"></p>
-	<p id="defenderAttack"></p>
-	<h3 id="msg"></h3>
-
-	<button id="restart">Restart</button>
+<!-- Enemies to choose from -->
+  <div class="enemLoc">
+	<h2>Enemies Available To Attack</h2>
+	<div id="enemAvail"></div>
+  </div>
 
 </div>
-
-
-
-
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

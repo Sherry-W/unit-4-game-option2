@@ -1,3 +1,6 @@
+//how to win
+	var	hint = "all the characters can win and lose, but in case you can\'t find a way to win.. here is my hint: no matter which one you picked, make sure to defeat from high HP characters to low HP characters. have fun :D";
+
 //vars
 	var chopper_hp;
 	var luffy_hp;
@@ -32,7 +35,7 @@
 			$('#msg').text('Choose a Character!');
 
 	//if defender not picked
-		}else if ($('#yourChar').text() !== "" && $('#defender').text() == "") {
+		}else if ($('#yourChar').text() !== "" && $('#defender').text() == "" && $('#enemAvail').text() !== "") {
 			$('#msg').text('Choose a Defender!');
 			$('#userAttack').text("");
 			$('#defenderAttack').text("");
@@ -52,56 +55,62 @@
 	        defName = yourDefender.attr('data-name');
 	        defHP = yourDefender.attr('data-hp');
 	        def_cp = yourDefender.attr('data-coutpower');			
-			
-		//updating HP 
-			charHP = charHP - def_cp;
-			defHP = defHP - char_ap;
-			var updateCharHP = yourCharacter.attr('data-hp', charHP);
-			var updateDefHP = yourDefender.attr('data-hp', defHP);
 
-			$('#userAttack').text("You attacked " + defName + " for " + char_ap + " damage.");
-			$('#defenderAttack').text(defName + " attacked you back for " + def_cp + " damage.");
+			if (charHP>0) {
 
-			chopper_hp = $('#one_hp').text($('#chopper').attr('data-hp'));
-			luffy_hp = $('#two_hp').text($('#luffy').attr('data-hp'));
-			law_hp = $('#three_hp').text($('#law').attr('data-hp'));
-			shanks_hp = $('#four_hp').text($('#shanks').attr('data-hp'));
+				//updating HP 
+					charHP = charHP - def_cp;
+					defHP = defHP - char_ap;
+					var updateCharHP = yourCharacter.attr('data-hp', charHP);
+					var updateDefHP = yourDefender.attr('data-hp', defHP);
 
-			// console.log(charName, charHP, char_ap)
-			// console.log(defName, defHP, def_cp)
-			// console.log('char: '+charHP, 'def: '+defHP)
+					$('#userAttack').text("You attacked " + defName + " for " + char_ap + " damage.");
+					$('#defenderAttack').text(defName + " attacked you back for " + def_cp + " damage.");
 
-		//updating character attack power adding every time 
-			char_ap = parseInt(char_ap) + parseInt(char_old_ap);
-			// console.log('New char ap: '+char_ap);
-			var updateChar_ap = yourCharacter.attr('data-attpower', char_ap);
+					chopper_hp = $('#one_hp').text($('#chopper').attr('data-hp'));
+					luffy_hp = $('#two_hp').text($('#luffy').attr('data-hp'));
+					law_hp = $('#three_hp').text($('#law').attr('data-hp'));
+					shanks_hp = $('#four_hp').text($('#shanks').attr('data-hp'));
 
-		//win or lose
-			if (charHP <= 0 ) {
-				$('#userAttack').text("");
-				$('#defenderAttack').text("");
-				$('#msg').text("You been defeated... GAME OVER!");
-				$('#restart').show();
+					// console.log(charName, charHP, char_ap)
+					// console.log(defName, defHP, def_cp)
+					// console.log('char: '+charHP, 'def: '+defHP)
 
-			}else if (defHP <= 0) {
-				$('#userAttack').text("");
-				$('#defenderAttack').text("");
-				$('#defender').text("");
-				$('#msg').text("You have defeated " + defName + ", you can choose to fight another enemy.");
+				//updating character attack power adding every time 
+					char_ap = parseInt(char_ap) + parseInt(char_old_ap);
+					// console.log('New char ap: '+char_ap);
+					var updateChar_ap = yourCharacter.attr('data-attpower', char_ap);
 
-				if ($('#enemAvail').text() == "" && $('#defender').text() == "") {
-					$('#userAttack').text("");
-					$('#defenderAttack').text("");
+				//win or lose
+					if (charHP <= 0 ) {
+						$('#userAttack').text("");
+						$('#defenderAttack').text("");
+						$('#msg').text("You been defeated... GAME OVER!");
+						$('#restart').show();
 
-					$('#msg').text("You have defeated all the enemies! You Won!!! GAME OVER!!");
-					$('#restart').show();
-				}
+					}else if (defHP <= 0) {
+						$('#userAttack').text("");
+						$('#defenderAttack').text("");
+						$('#defender').text("");
+						$('#msg').text("You have defeated " + defName + ", you can choose to fight another enemy.");
+
+						if ($('#enemAvail').text() == "" && $('#defender').text() == "") {
+							$('#userAttack').text("");
+							$('#defenderAttack').text("");
+
+							$('#msg').text("You have defeated all the enemies! You Won!!! GAME OVER!!");
+							$('#restart').show();
+						}
+					}
 			}
+		
+
+	//when defeated all the enemies		
+		}else if ($('#enemAvail').text() == "" && $('#defender').text() == "") {
+			$('#msg').text("No more enemies.");
+			$('#restart').show();
 		}
 	});
-
-
-
 
 // choose Your Character and move the rest to Enemies Avail
 	$(document).ready(function(){
@@ -112,6 +121,14 @@
 
 		    if ($('#yourChar').text() == "") {
 		    	$('#yourChar').append($(this));
+
+		    //after your character is picked, do the following:	
+		    	$('.defLoc').show();;
+		    	$('.enemLoc').show();
+		    	$('.defLoc').removeClass('defLoc');
+		    	$('#msgLoc_before').addClass('msgLoc');
+		    	$('#fightLoc_before').removeClass('removeFloat');
+		    	$('#fightLoc_before').addClass('fightLoc');
 		    }
 	    });
 	});
